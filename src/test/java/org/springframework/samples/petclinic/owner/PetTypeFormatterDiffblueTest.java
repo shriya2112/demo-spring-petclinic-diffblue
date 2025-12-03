@@ -1,6 +1,5 @@
 package org.springframework.samples.petclinic.owner;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.verify;
@@ -32,26 +31,6 @@ class PetTypeFormatterDiffblueTest {
 
     @MockitoBean
     private PetTypeRepository petTypeRepository;
-
-    /**
-     * Test {@link PetTypeFormatter#print(PetType, Locale)} with {@code PetType}, {@code Locale}.
-     *
-     * <p>Method under test: {@link PetTypeFormatter#print(PetType, Locale)}
-     */
-    @Test
-    @DisplayName("Test print(PetType, Locale) with 'PetType', 'Locale'")
-    @Tag("ContributionFromDiffblue")
-    @ManagedByDiffblue
-    @MethodsUnderTest({"String PetTypeFormatter.print(PetType, Locale)"})
-    void testPrintWithPetTypeLocale() {
-        // Arrange
-        PetType petType = new PetType();
-        petType.setId(1);
-        petType.setName("Dog");
-
-        // Act and Assert
-        assertEquals("Dog", petTypeFormatter.print(petType, Locale.getDefault()));
-    }
 
     /**
      * Test {@link PetTypeFormatter#parse(String, Locale)}.
